@@ -4,287 +4,226 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Harsahir Singh | IT Service Management Leader</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
     <style>
-        /* --- CSS VARIABLES --- */
+        /* --- COLOR SCHEME --- */
         :root {
-            --primary: #003366; /* Deep Navy for gravitas */
-            --accent: #0078D4;  /* Professional blue accent */
-            --dark: #222222;
-            --light-bg: #F0F4F8; /* Subtle off-white */
+            --primary: #0B6E4F; /* HOOPP green */
+            --accent: #A7D7C5;  /* Light complementary green */
+            --dark: #1E1E1E;
+            --light-bg: #F7FAF9; 
             --white: #ffffff;
-            --shadow: 0 4px 12px rgba(0,0,0,0.08);
-            --shadow-hover: 0 10px 20px rgba(0,0,0,0.12);
-            --border-color: #D1D5DB;
+            --border-color: #E1E4E8;
+            --shadow: 0 6px 15px rgba(0,0,0,0.05);
+            --shadow-hover: 0 10px 25px rgba(0,0,0,0.1);
         }
 
         /* --- GLOBAL RESET --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Inter', 'Roboto', sans-serif;
+            background: var(--light-bg);
             color: var(--dark);
             line-height: 1.6;
-            background-color: var(--light-bg);
         }
-
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        a { text-decoration: none; color: inherit; }
         ul { list-style: none; }
 
         /* --- NAVIGATION --- */
         nav {
             background: var(--white);
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
         }
-
         .nav-container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 1rem 2rem;
         }
-
         .logo {
-            font-size: 1.6rem;
             font-weight: 700;
+            font-size: 1.6rem;
             color: var(--primary);
-            letter-spacing: -0.5px;
         }
-
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 2rem;
+            gap: 1.8rem;
         }
-
         .nav-links a {
             font-weight: 500;
             font-size: 0.95rem;
             color: #555;
+            transition: 0.3s;
         }
-
         .nav-links a:hover { color: var(--primary); }
-
         .btn-resume {
-            background-color: var(--primary);
-            color: #fff !important;
-            padding: 0.6rem 1.2rem;
-            border-radius: 4px;
-            font-weight: 500;
-            transition: background 0.3s;
+            background: var(--primary);
+            color: var(--white) !important;
+            padding: 0.55rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: 0.3s;
         }
+        .btn-resume:hover { background: var(--accent); }
 
-        .btn-resume:hover { background-color: var(--accent); }
-
-        /* --- HERO SECTION --- */
+        /* --- HERO --- */
         .hero {
             padding: 10rem 2rem 6rem 2rem;
-            background: linear-gradient(to right, var(--primary), var(--accent));
-            color: var(--white);
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             display: flex;
             align-items: center;
-            gap: 4rem;
-            border-radius: 0 0 30px 30px;
+            gap: 3rem;
         }
-
         .hero-text { flex: 1; }
-
         .hero h1 {
-            font-size: 2.5rem;
-            line-height: 1.3;
-            margin-bottom: 1rem;
+            font-size: 3rem;
+            line-height: 1.2;
+            color: var(--dark);
         }
-
         .hero-subtitle {
-            font-size: 1.2rem;
-            font-weight: 400;
-            margin-bottom: 1.5rem;
-            color: #E1E4E8;
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
         }
-
         .hero p {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
+            color: #555;
             margin-bottom: 2rem;
-            max-width: 600px;
+            max-width: 550px;
         }
-
         .hero-img-container {
             flex: 1;
             display: flex;
             justify-content: center;
         }
-
         .hero-img {
-            width: 300px;
-            height: 300px;
+            width: 280px;
+            height: 280px;
             border-radius: 50%;
             object-fit: cover;
-            border: 6px solid var(--white);
+            border: 6px solid var(--accent);
             box-shadow: var(--shadow-hover);
         }
-
         .social-icons a {
-            font-size: 1.5rem;
-            margin-right: 1.5rem;
-            color: #ddd;
+            font-size: 1.4rem;
+            margin-right: 1.3rem;
+            color: #777;
         }
-        .social-icons a:hover { color: var(--white); }
+        .social-icons a:hover { color: var(--primary); }
 
         /* --- SECTIONS --- */
         section {
             padding: 6rem 2rem;
         }
-
         .section-container {
             max-width: 1000px;
             margin: 0 auto;
         }
-
         h2 {
             font-size: 2rem;
             color: var(--primary);
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
             position: relative;
             display: inline-block;
         }
-
         h2::after {
             content: '';
             display: block;
             width: 60px;
             height: 4px;
             background: var(--accent);
-            margin-top: 10px;
+            margin-top: 8px;
             border-radius: 2px;
         }
 
-        /* --- EXPERIENCE TIMELINE --- */
-        .timeline { position: relative; max-width: 900px; margin: 0 auto; }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: #D1D5DB;
-            border-radius: 2px;
-        }
-
-        .timeline-item { position: relative; margin-bottom: 3rem; padding-left: 2.5rem; }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -6px;
-            top: 6px;
-            width: 16px;
-            height: 16px;
-            background: var(--white);
-            border: 4px solid var(--primary);
-            border-radius: 50%;
-            z-index: 1;
-        }
-
-        .timeline-card {
+        /* --- EXPERIENCE --- */
+        .experience-card {
             background: var(--white);
             padding: 2rem;
             border-radius: 10px;
+            margin-bottom: 2.5rem;
             box-shadow: var(--shadow);
-            border-left: 4px solid var(--primary);
+            transition: 0.3s;
         }
-
+        .experience-card:hover { box-shadow: var(--shadow-hover); }
         .role-title { font-size: 1.3rem; font-weight: 700; color: var(--dark); }
-        .company-name { font-size: 1rem; color: var(--primary); font-weight: 500; margin-bottom: 0.5rem; display: block; }
-        .date-range { font-size: 0.9rem; color: #888; margin-bottom: 1rem; display: block; font-style: italic; }
-
-        .timeline-card ul li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: #555;
-        }
-        .timeline-card ul li::before {
-            content: "\f054";
+        .company-name { font-weight: 600; color: var(--primary); font-size: 1rem; margin-bottom: 0.5rem; display: block; }
+        .date-range { font-size: 0.9rem; color: #888; margin-bottom: 1rem; font-style: italic; }
+        .experience-card ul li { margin-bottom: 0.6rem; padding-left: 1rem; position: relative; }
+        .experience-card ul li::before {
+            content: "\f105";
             font-family: "Font Awesome 5 Free";
             font-weight: 900;
             position: absolute;
             left: 0;
-            top: 3px;
             color: var(--accent);
-            font-size: 0.7rem;
         }
 
-        /* --- PROJECTS GRID --- */
+        /* --- PROJECTS --- */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
         }
-
         .project-card {
             background: var(--white);
-            border: 1px solid var(--border-color);
             border-radius: 10px;
-            overflow: hidden;
+            padding: 1.8rem;
+            box-shadow: var(--shadow);
             transition: 0.3s;
-            padding: 1.5rem;
         }
+        .project-card:hover { box-shadow: var(--shadow-hover); }
+        .project-title { font-weight: 700; font-size: 1.2rem; color: var(--primary); margin-bottom: 0.8rem; }
+        .project-desc { margin-bottom: 1rem; color: #555; }
+        .project-desc ul { padding-left: 1.2rem; }
+        .project-desc ul li { margin-bottom: 0.5rem; }
 
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--primary);
+        /* --- EDUCATION --- */
+        .education-card {
+            background: var(--white);
+            padding: 1.5rem 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
         }
-
-        .project-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.8rem; color: var(--primary); }
-        .project-desc { font-size: 0.95rem; color: #555; margin-bottom: 1rem; }
-
-        .tech-tag {
-            display: inline-block;
-            background: #E1F0FF;
-            color: var(--primary);
-            padding: 4px 10px;
-            font-size: 0.8rem;
-            border-radius: 20px;
-            margin-right: 5px;
-            margin-bottom: 5px;
-            font-weight: 500;
-        }
+        .education-title { font-weight: 700; color: var(--primary); font-size: 1.15rem; margin-bottom: 0.5rem; }
 
         /* --- FOOTER --- */
         footer {
             background: var(--dark);
             color: #aaa;
             text-align: center;
-            padding: 3rem 0;
+            padding: 3rem 2rem;
             font-size: 0.9rem;
         }
 
-        /* --- MOBILE --- */
+        /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
-            .hero { flex-direction: column-reverse; text-align: center; padding-top: 8rem;}
-            .hero-img { width: 200px; height: 200px; }
+            .hero { flex-direction: column-reverse; text-align: center; padding-top: 8rem; }
+            .hero-img { width: 200px; height: 200px; margin-bottom: 1.5rem; }
             .nav-links { display: none; }
-            .logo { margin: 0 auto; }
-            .timeline::before { left: 20px; }
-            .timeline-item { padding-left: 3rem; }
-            .timeline-item::before { left: 14px; }
+            .projects-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
+    <!-- NAV -->
     <nav>
         <div class="nav-container">
             <div class="logo">Harsahir Singh</div>
@@ -293,13 +232,12 @@
                 <a href="#experience">Experience</a>
                 <a href="#projects">Projects</a>
                 <a href="#education">Education</a>
-                <a href="./Harsahir Singh Resume.pdf" class="btn-resume" download>
-                    <i class="fas fa-file-download"></i> Download Resume
-                </a>
+                <a href="./Harsahir Singh Resume.pdf" class="btn-resume" download><i class="fas fa-download"></i> Resume</a>
             </div>
         </div>
     </nav>
 
+    <!-- HERO -->
     <header class="hero" id="about">
         <div class="hero-text">
             <h1>Harsahir Singh</h1>
@@ -320,119 +258,72 @@
         </div>
     </header>
 
+    <!-- EXPERIENCE -->
     <section id="experience">
         <div class="section-container">
             <h2>Professional Experience</h2>
-            <div class="timeline">
 
-                <div class="timeline-item">
-                    <div class="timeline-card">
-                        <span class="role-title">Manager / IT Service Management</span>
-                        <span class="company-name">HOOPP | Sep 2025 – Present</span>
-                        <ul>
-                            <li>Lead ITSM operations including incident, change, and problem management.</li>
-                            <li>Coordinate cross-functional teams for high-impact (P1/P2) incidents and service restoration.</li>
-                            <li>Manage CAB meetings, post-incident reviews, and governance communications.</li>
-                            <li>Assisting in developing KPI Power BI dashboards for reporting metrics and operational insights.</li>
-                            <li>Drive continuous improvement initiatives to enhance service reliability.</li>
-                            <li>Implement ITSM best practices aligned with enterprise standards.</li>
-                            <li>Mentor team members to build ITSM maturity and efficiency.</li>
-                            <li>Engage with stakeholders for critical infrastructure decisions.</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="experience-card">
+                <span class="role-title">Manager / IT Service Management</span>
+                <span class="company-name">HOOPP</span>
+                <span class="date-range">Sep 2025 – Present</span>
+                <ul>
+                    <li>Lead ITSM operations including incident, change, and problem management.</li>
+                    <li>Coordinate cross-functional teams for high-impact (P1/P2) incidents and service restoration.</li>
+                    <li>Manage CAB meetings, post-incident reviews, and governance communications.</li>
+                    <li>Develop KPI Power BI dashboards for reporting metrics and operational insights.</li>
+                    <li>Drive continuous improvement initiatives to enhance service reliability.</li>
+                    <li>Implement ITSM best practices aligned with enterprise standards.</li>
+                    <li>Mentor team members to build ITSM maturity and efficiency.</li>
+                    <li>Engage with stakeholders for critical infrastructure decisions.</li>
+                </ul>
+            </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-card">
-                        <span class="role-title">Cloud Engineer / Incident Manager (Co-op)</span>
-                        <span class="company-name">HOOPP | Nov 2024 – Apr 2025</span>
-                        <ul>
-                            <li>Helped manage high-impact incidents (P1/P2), coordinating teams and facilitating communication.</li>
-                            <li>Logged incidents and changes in ServiceNow and Azure DevOps.</li>
-                            <li>Participated in CAB meetings, change evaluations, and post-incident follow-ups.</li>
-                            <li>Monitored service performance via AppDynamics/Splunk and flagged early warnings.</li>
-                            <li>Built and improved Power BI dashboards for ITSM metrics and trends.</li>
-                            <li>Gained exposure to BCM/DR, root cause investigations, and stakeholder communications.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-card">
-                        <span class="role-title">IT Assistance (Part-Time)</span>
-                        <span class="company-name">DEX Technology | Nov 2023 – Nov 2024</span>
-                        <ul>
-                            <li>Supported IT operations and resolved 90% of tickets on first contact.</li>
-                            <li>Diagnosed and resolved hardware/software issues efficiently.</li>
-                            <li>Helped implement solutions that improved infrastructure efficiency by 20%.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-card">
-                        <span class="role-title">Fire Prevention & Site Security Supervisor</span>
-                        <span class="company-name">Stellantis Canada | May 2020 – Apr 2025</span>
-                        <ul>
-                            <li>Supervised a high-performing team, coordinated site-wide security measures.</li>
-                            <li>Improved safety response and reduced breaches by 35% through incident analysis.</li>
-                        </ul>
-                    </div>
-                </div>
-
+            <div class="experience-card">
+                <span class="role-title">Cloud Engineer / Incident Manager (Co-op)</span>
+                <span class="company-name">HOOPP</span>
+                <span class="date-range">Nov 2024 – Apr 2025</span>
+                <ul>
+                    <li>Managed high-impact incidents, coordinated teams, and facilitated communications.</li>
+                    <li>Logged incidents and changes in ServiceNow and Azure DevOps.</li>
+                    <li>Participated in CAB meetings and post-incident reviews.</li>
+                    <li>Monitored service performance using AppDynamics and Splunk.</li>
+                    <li>Developed dashboards and reports to support operational excellence.</li>
+                </ul>
             </div>
         </div>
     </section>
 
+    <!-- PROJECTS -->
     <section id="projects" class="bg-light">
         <div class="section-container">
-            <h2>Projects</h2>
+            <h2>Projects & Technical Initiatives</h2>
             <div class="projects-grid">
 
                 <div class="project-card">
-                    <div class="project-title">Amazon Web Services (AWS)</div>
-                    <ul>
-                        <li>Designed secure, scalable AWS infrastructure including VPCs, EC2 instances, S3, and IAM.</li>
-                        <li>Utilized Systems Manager for EC2 access without public IPs.</li>
-                        <li>Implemented internal load balancer and Route 53 DNS for private web access.</li>
-                        <li>Configured user permissions and roles for secure access using IAM.</li>
-                        <li>Created an email server with Roundcube using Amazon RDS.</li>
-                        <li>Deployed VPC peering for secure communication between network segments.</li>
-                    </ul>
+                    <div class="project-title">Secure & Scalable Cloud Infrastructure (AWS)</div>
+                    <div class="project-desc">
+                        <ul>
+                            <li>Designed secure AWS infrastructure including VPCs, EC2, S3, and IAM.</li>
+                            <li>Implemented Systems Manager for EC2 access without public IPs.</li>
+                            <li>Configured internal load balancers and Route 53 DNS for private web access.</li>
+                            <li>Configured IAM roles and user permissions for secure access.</li>
+                            <li>Deployed VPC peering for secure communication between network segments.</li>
+                            <li>Implemented a custom email server using Roundcube and Amazon RDS.</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="project-card">
-                    <div class="project-title">Microsoft Azure</div>
-                    <ul>
-                        <li>Designed and implemented Azure infrastructure including virtual networks, subnets, domain controllers, web servers, and client environments.</li>
-                        <li>Leveraged Azure Bastion Host for secure remote access to virtual machines.</li>
-                        <li>Created and configured multiple user accounts in Azure AD with role-based access control.</li>
-                        <li>Implemented internal load balancer and virtual network peering for high availability and secure connectivity.</li>
-                        <li>Set up Private DNS Zones for proper routing of internal FQDNs.</li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="education">
-        <div class="section-container">
-            <h2>Education & Skills</h2>
-            <div class="timeline">
-
-                <div class="timeline-item">
-                    <div class="timeline-card">
-                        <span class="role-title">Seneca College</span>
-                        <span class="company-name">Computer Systems Technology – Advanced Diploma</span>
-                        <span class="date-range">May 2023 – Present</span>
+                    <div class="project-title">Enterprise Cloud & Network Solutions (Azure)</div>
+                    <div class="project-desc">
                         <ul>
-                            <li>Analyze, plan, design, and implement computer systems and networking solutions.</li>
-                            <li>Evaluate computer hardware for appropriate system configurations.</li>
-                            <li>Experienced with VMware/VirtualBox, Windows Server 2012 R2/2016, Active Directory & AGDLP.</li>
-                            <li>Proficient in Linux/Unix OS, user/storage/network management, CLI tools.</li>
-                            <li>Routing & switching: STP, InterVLAN Routing, IP Subnetting, ACLs.</li>
-                            <li>Hands-on with Azure & AWS (EC2, VPCs, S3, IAM, RDS, Route 53, ALBs, VPC Peering).</li>
+                            <li>Designed and implemented Azure infrastructure including virtual networks, subnets, and domain controllers.</li>
+                            <li>Leveraged Azure Bastion Host for secure VM access.</li>
+                            <li>Managed users in Azure AD with role-based access control.</li>
+                            <li>Implemented internal load balancer for high availability web apps.</li>
+                            <li>Established Virtual Network Peering for secure communication between VMs.</li>
+                            <li>Configured Private DNS Zones for efficient and secure name resolution.</li>
                         </ul>
                     </div>
                 </div>
@@ -441,10 +332,28 @@
         </div>
     </section>
 
-    <footer>
+    <!-- EDUCATION -->
+    <section id="education">
         <div class="section-container">
-            <p>&copy; 2026 Harsahir Singh. All rights reserved. | <a href="mailto:singh.harsahir@gmail.com" style="color:#aaa;">Contact</a></p>
+            <h2>Education & Technical Skills</h2>
+            <div class="education-card">
+                <span class="education-title">Seneca College | Computer Systems Technology (Advanced Diploma)</span>
+                <p>Brampton, ON | May 2023 – Present</p>
+                <ul>
+                    <li>Analyze, plan, design, and implement computer systems and networking solutions.</li>
+                    <li>Evaluate hardware and recommend system configurations.</li>
+                    <li>Manage virtual machines via VMware/VirtualBox and Windows Server 2012/2016.</li>
+                    <li>Proficient in Linux environments: CLI, user/storage/network management.</li>
+                    <li>Configure routing and switching devices (STP, VLANs, InterVLAN Routing, ACLs).</li>
+                    <li>Hands-on with Microsoft Azure, basic exposure to AWS services.</li>
+                </ul>
+            </div>
         </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Harsahir Singh. All rights reserved.</p>
     </footer>
 
 </body>
