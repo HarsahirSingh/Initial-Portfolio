@@ -1,336 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harsahir Singh | ITSM Manager & Cloud Engineer Portfolio</title>
-    <meta name="description" content="IT Service Management Manager and Cloud Engineer specializing in incident management, service governance, and cloud infrastructure.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<title>Harsahir Singh | ITSM Manager & Cloud Engineering Leader</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.6;
-            color: #222;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
-        header {
-            background: #0f172a;
-            color: #fff;
-            padding: 2.5rem 1.5rem;
-        }
+<style>
+:root {
+    --hoopp-green: #009944;
+    --dark: #0f172a;
+    --muted: #6b7280;
+}
 
-        .header-container {
-            max-width: 1100px;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .intro h1 {
-            margin: 0;
-            font-size: 2.1rem;
-        }
+body {
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: #1f2937;
+    line-height: 1.75;
+}
 
-        .intro p {
-            margin-top: 0.75rem;
-            max-width: 650px;
-        }
+section {
+    padding: 110px 28px;
+}
 
-        .contact-box {
-            background: #1e293b;
-            padding: 1.25rem;
-            border-radius: 10px;
-            min-width: 260px;
-        }
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
 
-        .contact-box h3 {
-            margin-top: 0;
-        }
+h1 {
+    font-size: 3.8rem;
+    font-weight: 800;
+}
 
-        .contact-box a {
-            color: #38bdf8;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.6rem;
-        }
+h2 {
+    font-size: 2.7rem;
+    margin-bottom: 60px;
+    position: relative;
+}
 
-        section {
-            padding: 3rem 1.5rem;
-        }
+h2::after {
+    content: "";
+    width: 90px;
+    height: 5px;
+    background: var(--hoopp-green);
+    position: absolute;
+    left: 0;
+    bottom: -18px;
+}
 
-        .section-container {
-            max-width: 1100px;
-            margin: auto;
-        }
+h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
 
-        h2 {
-            margin-bottom: 1.75rem;
-            color: #0f172a;
-        }
+p {
+    font-size: 1.2rem;
+    color: var(--muted);
+}
 
-        .experience-card,
-        .education-card,
-        .project-card {
-            margin-bottom: 2.2rem;
-        }
+/* HERO */
+.hero {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 70px;
+    align-items: center;
+}
 
-        .role-title {
-            font-weight: bold;
-            display: block;
-            font-size: 1.05rem;
-        }
+.hero img {
+    width: 100%;
+    border-radius: 16px;
+    border: 6px solid var(--hoopp-green);
+}
 
-        .date-range {
-            font-size: 0.9rem;
-            color: #555;
-            margin-bottom: 0.6rem;
-            display: block;
-        }
+.hero-sub {
+    margin-top: 14px;
+    color: var(--hoopp-green);
+    font-weight: 600;
+    font-size: 1.25rem;
+}
 
-        ul {
-            padding-left: 1.3rem;
-        }
+/* EXPERIENCE & EDUCATION */
+.exp-card {
+    margin-bottom: 70px;
+}
 
-        ul li {
-            margin-bottom: 0.55rem;
-        }
+.exp-card ul {
+    list-style: none;
+}
 
-        /* PROJECTS */
-        .project-icon {
-            font-size: 1.6rem;
-            color: #2563eb;
-            margin-bottom: 0.5rem;
-        }
+.exp-card li {
+    position: relative;
+    padding-left: 26px;
+    margin-bottom: 12px;
+}
 
-        .project-card img {
-            width: 100%;
-            max-width: 520px;
-            border-radius: 8px;
-            cursor: pointer;
-            margin: 0.75rem 0;
-            transition: transform 0.2s ease;
-        }
+.exp-card li::before {
+    content: "➤";
+    position: absolute;
+    left: 0;
+    color: var(--hoopp-green);
+}
 
-        .project-card img:hover {
-            transform: scale(1.02);
-        }
+/* PROJECTS */
+.project {
+    margin-bottom: 90px;
+}
 
-        /* SKILLS */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-        }
+.project img {
+    width: 100%;
+    margin: 28px 0;
+    border-radius: 14px;
+    border: 2px solid #e5e7eb;
+}
 
-        .skills-card {
-            background: #f8fafc;
-            padding: 1.2rem;
-            border-radius: 10px;
-        }
+.project ul {
+    list-style: none;
+}
 
-        /* MODAL VIEWER */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.85);
-            align-items: center;
-            justify-content: center;
-        }
+.project li {
+    margin-bottom: 14px;
+}
 
-        .modal img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 10px;
-        }
+.project li i {
+    color: var(--hoopp-green);
+    margin-right: 10px;
+}
 
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            font-size: 2rem;
-            color: #fff;
-            cursor: pointer;
-        }
+/* CTA */
+.cta {
+    background: var(--hoopp-green);
+    color: white;
+    text-align: center;
+    padding: 90px 28px;
+}
 
-        footer {
-            background: #0f172a;
-            color: #fff;
-            text-align: center;
-            padding: 1.5rem;
-        }
+.cta a {
+    display: inline-block;
+    margin-top: 26px;
+    background: white;
+    color: var(--hoopp-green);
+    padding: 16px 40px;
+    border-radius: 8px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-decoration: none;
+}
 
-        footer a {
-            color: #38bdf8;
-            text-decoration: none;
-        }
-
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-            }
-        }
-    </style>
+/* MOBILE */
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<header>
-    <div class="header-container">
-        <div class="intro">
-            <h1>Harsahir Singh</h1>
-            <p>
-                IT Service Management Manager bridging technical infrastructure and service governance.
-                Progressed from a Cloud Engineer Co-op into ITSM leadership by focusing on operational excellence,
-                incident ownership, and reliability engineering. Currently working full-time while completing my
-                degree part-time.
-            </p>
-        </div>
-
-        <div class="contact-box">
-            <h3>Let’s Connect</h3>
-            <a href="mailto:singh.harsahir@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            <a href="resume.pdf" download><i class="fas fa-file-download"></i> Download Resume</a>
-        </div>
+<!-- HERO -->
+<section>
+<div class="container hero">
+    <img src="Harsahir Singh.jpg" alt="Harsahir Singh">
+    <div>
+        <h1>Harsahir Singh</h1>
+        <div class="hero-sub">Manager, IT Service Management</div>
+        <p>
+            IT Service Management leader bridging technical infrastructure and service governance.
+            Promoted from Co-op to Manager while completing education part-time — driving reliability,
+            operational excellence, and data-driven decision-making.
+        </p>
     </div>
-</header>
+</div>
+</section>
 
 <!-- EXPERIENCE -->
-<section id="experience">
-    <div class="section-container">
-        <h2>Professional Experience</h2>
+<section>
+<div class="container">
+<h2>Professional Experience</h2>
 
-        <div class="experience-card">
-            <span class="role-title">Manager, IT Service Management — HOOPP</span>
-            <span class="date-range">Toronto, ON | 2024 – Present</span>
-            <ul>
-                <li>Lead ITSM operations for environments supporting 1,000+ IT users, with organization-wide communications reaching 2,000 employees.</li>
-                <li>Own the full incident lifecycle from detection and coordination through stakeholder communications and PIR publication.</li>
-                <li>Manage an average of 4–6 P2 incidents per month while supporting problem management initiatives.</li>
-                <li>Collaborate with infrastructure, security, and application teams to maintain 99.9% uptime targets.</li>
-            </ul>
-        </div>
+<div class="exp-card">
+    <h3>Manager – IT Service Management | HOOPP</h3>
+    <p>Sept 2025 – Present</p>
+    <ul>
+        <li>Lead ITSM operations supporting ~1,000 IT users with communications reaching 2,000+ employees.</li>
+        <li>Own end-to-end P1/P2 incident lifecycle including executive communications and PIRs.</li>
+        <li>Maintain 99.9% uptime across business-critical platforms.</li>
+        <li>Drive Incident, Change, and Problem Management governance.</li>
+    </ul>
+</div>
 
-        <div class="experience-card">
-            <span class="role-title">Cloud Engineer Co-op — HOOPP</span>
-            <span class="date-range">Toronto, ON | 2023 – 2024</span>
-            <ul>
-                <li>Supported cloud and infrastructure teams across Azure and AWS environments.</li>
-                <li>Assisted in incident triage, monitoring, and service restoration activities.</li>
-                <li>Gained hands-on exposure to enterprise ITSM processes, directly enabling rapid transition into leadership.</li>
-            </ul>
-        </div>
+<div class="exp-card">
+    <h3>Cloud Engineer / Incident Manager – Co-op | HOOPP</h3>
+    <p>Nov 2024 – Apr 2025</p>
+    <ul>
+        <li>Supported enterprise incidents and service restoration efforts.</li>
+        <li>Worked with Splunk, AppDynamics, ServiceNow, Azure DevOps.</li>
+        <li>Contributed to BCM/DR testing and post-incident reviews.</li>
+    </ul>
+</div>
 
-        <div class="experience-card">
-            <span class="role-title">IT Support Specialist — DEX Technology</span>
-            <span class="date-range">Ontario | 2022 – 2023</span>
-            <ul>
-                <li>Provided Tier 1 and Tier 2 technical support across enterprise user environments.</li>
-                <li>Resolved endpoint, application, and access issues while meeting SLA targets.</li>
-            </ul>
-        </div>
-    </div>
+</div>
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" class="bg-light">
-    <div class="section-container">
-        <h2>Technical Projects</h2>
+<section>
+<div class="container">
+<h2>Technical Projects</h2>
 
-        <div class="project-card">
-            <div class="project-icon"><i class="fab fa-aws"></i></div>
-            <span class="role-title">AWS Secure Cloud Deployment</span>
-            <img src="aws-project.png" alt="AWS Project Diagram" onclick="openModal(this.src)">
-            <ul>
-                <li>Designed a secure and highly available AWS VPC architecture using private subnets and controlled access.</li>
-                <li>Implemented Bastion host access to minimize attack surfaces while maintaining administrative control.</li>
-                <li>Focused on cloud security best practices and infrastructure resilience.</li>
-            </ul>
-        </div>
+<div class="project">
+    <h3><i class="fab fa-aws"></i> AWS Secure Cloud Architecture</h3>
+    <img src="aws-project.PNG" alt="AWS Project Diagram">
+    <ul>
+        <li><i class="fas fa-cloud"></i> Designed secure VPC with private subnets and internal load balancers</li>
+        <li><i class="fas fa-cloud"></i> Implemented IAM roles and Systems Manager access</li>
+        <li><i class="fas fa-cloud"></i> Configured Route 53 private DNS and VPC peering</li>
+        <li><i class="fas fa-cloud"></i> Built email infrastructure using EC2, RDS, and Roundcube</li>
+    </ul>
+</div>
 
-        <div class="project-card">
-            <div class="project-icon"><i class="fab fa-microsoft"></i></div>
-            <span class="role-title">Microsoft Azure Infrastructure Lab</span>
-            <img src="ms-project.png" alt="Microsoft Azure Project Diagram" onclick="openModal(this.src)">
-            <ul>
-                <li>Built Azure VNets, virtual machines, and secure access configurations.</li>
-                <li>Explored identity, networking, and monitoring concepts aligned with enterprise governance.</li>
-            </ul>
-        </div>
-    </div>
-</section>
+<div class="project">
+    <h3><i class="fab fa-microsoft"></i> Azure Enterprise Infrastructure</h3>
+    <img src="ms-project.PNG" alt="Azure Project Diagram">
+    <ul>
+        <li><i class="fas fa-cloud"></i> Designed VNets, subnets, and domain services</li>
+        <li><i class="fas fa-cloud"></i> Implemented Azure Bastion and RBAC</li>
+        <li><i class="fas fa-cloud"></i> Deployed internal load balancers</li>
+        <li><i class="fas fa-cloud"></i> Established VNet peering and private DNS zones</li>
+    </ul>
+</div>
 
-<!-- SKILLS -->
-<section id="skills">
-    <div class="section-container">
-        <h2>Technical Skills & Tools</h2>
-
-        <div class="skills-grid">
-            <div class="skills-card">
-                <strong>ITSM & Governance</strong>
-                <p>Incident Management, Change Management, Problem Management, ServiceNow, Jira</p>
-            </div>
-
-            <div class="skills-card">
-                <strong>Cloud & Infrastructure</strong>
-                <p>AWS (EC2, VPC), Azure (VNet, Bastion), Windows Server, Linux/Unix</p>
-            </div>
-
-            <div class="skills-card">
-                <strong>Observability & Reporting</strong>
-                <p>Splunk, AppDynamics, Power BI, Operational Metrics</p>
-            </div>
-        </div>
-    </div>
+</div>
 </section>
 
 <!-- EDUCATION -->
-<section id="education" class="bg-light">
-    <div class="section-container">
-        <h2>Education</h2>
+<section>
+<div class="container">
+<h2>Education</h2>
 
-        <div class="education-card">
-            <span class="role-title">Seneca College — Computer Systems Technology (Advanced Diploma)</span>
-            <span class="date-range">2023 – Present (Part-Time)</span>
-        </div>
-
-        <div class="education-card">
-            <span class="role-title">Sheridan College — Social Service Worker Diploma</span>
-            <span class="date-range">2019 – 2021</span>
-        </div>
-    </div>
-</section>
-
-<footer>
-    <p>© 2026 Harsahir Singh · <a href="mailto:singh.harsahir@gmail.com">Contact Me</a></p>
-</footer>
-
-<!-- MODAL SCRIPT -->
-<div class="modal" id="imageModal">
-    <span class="modal-close" onclick="closeModal()">&times;</span>
-    <img id="modalImage">
+<div class="exp-card">
+    <h3>Computer Systems Technology – Advanced Diploma | Seneca College</h3>
+    <p>North York, ON | May 2023 – Present (Part-Time)</p>
+    <ul>
+        <li>Design, implement, and troubleshoot enterprise computer systems and networks.</li>
+        <li>Hands-on experience with Windows Server, Linux/Unix administration.</li>
+        <li>Advanced exposure to Microsoft Azure and foundational AWS services.</li>
+        <li>Strong grounding in routing, switching, and network security fundamentals.</li>
+    </ul>
 </div>
 
-<script>
-    function openModal(src) {
-        document.getElementById("modalImage").src = src;
-        document.getElementById("imageModal").style.display = "flex";
-    }
+<div class="exp-card">
+    <h3>Social Service Worker Diploma | Sheridan College</h3>
+    <p>Brampton, ON | Sept 2019 – Apr 2021</p>
+    <ul>
+        <li>Graduated with academic honors.</li>
+        <li>Developed leadership, communication, and crisis management skills.</li>
+    </ul>
+</div>
 
-    function closeModal() {
-        document.getElementById("imageModal").style.display = "none";
-    }
-</script>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+<h2>Let’s Connect</h2>
+<p>If you’re looking for leadership with deep technical understanding, let’s talk.</p>
+<a href="mailto:singh.harsahir@gmail.com">Contact Me</a>
+</section>
 
 </body>
 </html>
