@@ -38,7 +38,6 @@
         .btn-resume { background-color: var(--primary); color: #fff !important; padding: 0.6rem 1.2rem; border-radius: 4px; font-weight: 500; transition: background 0.3s; }
         .btn-resume:hover { background-color: var(--accent); }
 
-        /* Mobile Menu Icon */
         .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--dark); }
 
         /* --- HERO SECTION --- */
@@ -46,7 +45,6 @@
         .hero-text { flex: 1; }
         .hero h1 { font-size: 2.4rem; line-height: 1.3; margin-bottom: 1rem; color: var(--dark); }
         .hero p { font-size: 1.15rem; color: #444; margin-bottom: 2rem; max-width: 600px; }
-        .hero-subtitle { font-size: 1.1rem; font-weight: 500; color: #666; margin-bottom: 1.5rem; }
         .hero-img-container { flex: 1; display: flex; justify-content: center; }
         .hero-img { width: 250px; height: 250px; border-radius: 50%; object-fit: cover; object-position: center; border: 6px solid var(--light-bg); box-shadow: var(--shadow-hover); }
         .social-icons a { font-size: 1.5rem; margin-right: 1.5rem; color: #777; }
@@ -95,8 +93,11 @@
         .education-card ul li::before { content: "\f0da"; font-family: "Font Awesome 5 Free"; font-weight: 900; position: absolute; left: 0; top: 4px; color: var(--accent); font-size: 0.7rem; }
 
         /* --- CTA --- */
-        .cta { background: var(--primary); color: #fff; text-align: center; padding: 3rem 2rem; border-radius: 8px; margin-top: 4rem; }
-        .cta a { color: #fff; font-weight: 700; font-size: 1.1rem; display: inline-block; margin-top: 1rem; border: 2px solid #fff; padding: 0.7rem 1.5rem; border-radius: 4px; transition: 0.3s; }
+        .cta { background: var(--primary); color: #fff; text-align: center; padding: 4rem 2rem; border-radius: 8px; margin-top: 4rem; }
+        .cta h2 { color: #ffffff; border-bottom: none; margin-bottom: 1rem; }
+        .cta h2::after { display: none; } /* Hide the green bar inside CTA */
+        .cta p { color: #ffffff; margin-bottom: 2rem; font-size: 1.1rem; }
+        .cta a { color: #fff; font-weight: 700; font-size: 1.1rem; display: inline-block; border: 2px solid #fff; padding: 0.7rem 1.5rem; border-radius: 4px; transition: 0.3s; }
         .cta a:hover { background: #fff; color: var(--primary); }
 
         /* --- FOOTER --- */
@@ -107,33 +108,13 @@
         .modal-content { margin: auto; display: block; width: 80%; max-width: 900px; }
         .close { position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; }
 
-        /* --- MEDIA QUERIES --- */
         @media(max-width: 768px) {
             .menu-toggle { display: block; }
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: var(--white);
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-                padding: 1rem 0;
-            }
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background: var(--white); padding: 1rem 0; box-shadow: 0 5px 10px rgba(0,0,0,0.1); }
             .nav-links.active { display: flex; }
-            .nav-links a { padding: 1rem 0; width: 100%; text-align: center; }
-            
             .hero { flex-direction: column-reverse; text-align: center; padding-top: 8rem; }
-            .hero p { margin: 0 auto 2rem auto; }
             .hero-img { width: 200px; height: 200px; }
-            
-            .timeline::before { left: 20px; }
             .timeline-item { padding-left: 3.5rem; }
-            .timeline-item::before { left: 14px; }
-            
-            .projects-grid { grid-template-columns: 1fr; }
-            .skills-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -161,7 +142,7 @@
     <header class="hero" id="about">
         <div class="hero-text">
             <h1>Manager, IT Service Management</h1>
-            <p>Bridging the gap between technical infrastructure and ITSM leadership, I specialize in driving reliability, operational excellence, and data-informed strategies across complex environments. With a foundation in engineering, I now lead initiatives that optimize performance, streamline processes, and empower teams to achieve results in high-pressure situations. Currently, I’m working full-time while completing my degree part-time, continuously expanding both my technical and strategic expertise.</p>
+            <p>Bridging the gap between technical infrastructure and ITSM leadership, I specialize in driving reliability, operational excellence, and data-informed strategies across complex environments. With a foundation in engineering, I now lead initiatives that optimize performance, streamline processes, and empower teams to achieve results in high-pressure situations.</p>
             <div class="social-icons">
                 <a href="mailto:singh.harsahir@gmail.com"><i class="fas fa-envelope"></i></a>
                 <a href="https://www.linkedin.com/in/harsahir-singh" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -183,14 +164,10 @@
                         <span class="company-name"> Healthcare of Ontario Pension Plan (HOOPP) </span>
                         <span class="date-range">Sept 2025 – Present</span>
                         <ul>
-                            <li>Lead ITSM operations including incident, change, and problem management for 1,000+ IT users and enterprise-wide notifications (~2,000 recipients).</li>
+                            <li>Lead ITSM operations including incident, change, and problem management.</li>
                             <li>Coordinate cross-functional teams for high-impact (P1/P2) incidents.</li>
                             <li>Manage CAB meetings, post-incident reviews, and governance communications.</li>
                             <li>Develop KPI Power BI dashboards for reporting metrics and operational insights.</li>
-                            <li>Drive continuous improvement initiatives to enhance service reliability and efficiency.</li>
-                            <li>Implement ITSM best practices aligned with enterprise standards.</li>
-                            <li>Mentor team members to build ITSM maturity and efficiency.</li>
-                            <li>Engage with stakeholders for critical infrastructure decisions.</li>
                         </ul>
                     </div>
                 </div>
@@ -201,11 +178,9 @@
                         <span class="company-name">Healthcare of Ontario Pension Plan (HOOPP)</span>
                         <span class="date-range">Nov 2024 – Apr 2025</span>
                         <ul>
-                            <li>Managed P1/P2 incidents for IT infrastructure supporting 1,000+ users with 99.9% uptime targets.</li>
+                            <li>Managed P1/P2 incidents for IT infrastructure supporting 1,000+ users.</li>
                             <li>Logged and tracked incidents and changes using ServiceNow and Azure DevOps.</li>
-                            <li>Participated in CAB meetings and post-incident reviews; owned end-to-end incident lifecycle.</li>
-                            <li>Monitored services via AppDynamics and Splunk, flagging early warnings.</li>
-                            <li>Created and enhanced Power BI dashboards for ITSM metrics and trends.</li>
+                            <li>Monitored services via AppDynamics and Splunk.</li>
                         </ul>
                     </div>
                 </div>
@@ -218,20 +193,6 @@
                         <ul>
                             <li>Provided frontline IT support with 90% first-contact resolution rate.</li>
                             <li>Diagnosed and resolved hardware/software issues efficiently.</li>
-                            <li>Implemented solutions improving infrastructure efficiency by 20%.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-card">
-                        <span class="role-title">Fire Prevention & Site Security Supervisor</span>
-                        <span class="company-name">Stellantis Canada</span>
-                        <span class="date-range">May 2020 – Apr 2025</span>
-                        <ul>
-                            <li>Supervised security teams and coordinated site-wide safety measures.</li>
-                            <li>Analyzed incidents to reduce breaches by 35% and improve emergency response.</li>
-                            <li>Demonstrated effective leadership under high-pressure situations and critical decision-making.</li>
                         </ul>
                     </div>
                 </div>
@@ -250,18 +211,16 @@
                         <li>Change Management</li>
                         <li>Problem Management</li>
                         <li>ServiceNow</li>
-                        <li>Jira</li>
                         <li>PagerDuty</li>
                     </ul>
                 </div>
                 <div class="skill-card">
                     <h3>Cloud & Infrastructure</h3>
                     <ul>
-                        <li>AWS (EC2, VPC, S3, IAM, RDS, Route 53, Load Balancers)</li>
-                        <li>Microsoft Azure (VNet, Bastion, Load Balancers, DNS, Virtual Network Peering)</li>
+                        <li>AWS (EC2, VPC, S3, IAM)</li>
+                        <li>Microsoft Azure (VNet, Bastion, Load Balancers)</li>
                         <li>Linux / Unix Systems</li>
-                        <li>Windows Server (2012 R2/2016) & VMware/VirtualBox</li>
-                        <li>Cisco Networking (STP, VLANs, ACLs, InterVLAN Routing)</li>
+                        <li>Cisco Networking</li>
                     </ul>
                 </div>
                 <div class="skill-card">
@@ -270,7 +229,6 @@
                         <li>Splunk & AppDynamics</li>
                         <li>Power BI & Dashboarding</li>
                         <li>Monitoring & Reporting</li>
-                        <li>Problem Analysis & Root Cause</li>
                     </ul>
                 </div>
             </div>
@@ -282,33 +240,27 @@
             <h2>Technical Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <img src="aws-project.PNG" alt="AWS Secure Cloud Deployment" class="project-img" onclick="openModal(this)">
+                    <img src="aws-project.PNG" alt="AWS Secure Cloud" class="project-img" onclick="openModal(this)">
                     <div class="project-body">
                         <span class="project-icon"><i class="fab fa-aws"></i></span>
                         <h3 class="project-title">AWS Secure Cloud Deployment</h3>
                         <ul>
-                            <li>Designed a highly available AWS VPC architecture for internal applications with private subnets and Bastion hosts.</li>
-                            <li>Utilized Systems Manager to access EC2 instances without public IPs.</li>
-                            <li>Implemented internal load balancer and Route 53 DNS for secure private web access.</li>
-                            <li>Configured IAM roles and permissions for secure access management.</li>
-                            <li>Deployed an email server with Roundcube using Amazon RDS.</li>
-                            <li>Established VPC peering for secure inter-network communication.</li>
+                            <li>Designed a highly available AWS VPC architecture.</li>
+                            <li>Utilized Systems Manager for secure EC2 access.</li>
+                            <li>Implemented internal load balancers and Route 53.</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <img src="ms-project.PNG" alt="Microsoft Azure Infrastructure Optimization" class="project-img" onclick="openModal(this)">
+                    <img src="ms-project.PNG" alt="Azure Optimization" class="project-img" onclick="openModal(this)">
                     <div class="project-body">
                         <span class="project-icon"><i class="fab fa-microsoft"></i></span>
-                        <h3 class="project-title">Microsoft Azure Infrastructure Optimization</h3>
+                        <h3 class="project-title">Azure Infrastructure Optimization</h3>
                         <ul>
-                            <li>Designed and implemented Azure infrastructure solutions including VNet, subnets, domain controllers, and client environments.</li>
-                            <li>Leveraged Azure Bastion Host for secure remote VM access.</li>
-                            <li>Configured multiple user accounts in Azure AD with role-based access control.</li>
-                            <li>Implemented internal load balancer for high availability.</li>
-                            <li>Established Virtual Network Peering for secure inter-network communication.</li>
-                            <li>Configured Private DNS Zones to maintain proper routing and privacy.</li>
+                            <li>Designed and implemented VNet, subnets, and domain controllers.</li>
+                            <li>Leveraged Azure Bastion Host for secure remote access.</li>
+                            <li>Established Virtual Network Peering.</li>
                         </ul>
                     </div>
                 </div>
@@ -320,25 +272,12 @@
         <div class="section-container">
             <h2>Education</h2>
             <div class="education-card">
-                <span class="role-title">Seneca College – Computer Systems Technology, Advanced Diploma</span>
-                <span class="date-range">North York, ON | May 2023 – Present</span>
-                <ul>
-                    <li>Analyze, plan, design, and implement computer systems and networking solutions.</li>
-                    <li>Evaluate computer hardware components to recommend appropriate system configurations.</li>
-                    <li>Experienced with creating, configuring, and managing virtual machines using Windows Server 2012 R2 & 2016 via VMware/VirtualBox.</li>
-                    <li>Knowledgeable in Linux/Unix operating systems and command line tools.</li>
-                    <li>Proficient in installing, configuring, maintaining, and troubleshooting Linux servers.</li>
-                    <li>Knowledge and practical experience in configuring routing and switching devices (STP, InterVLAN Routing, IP Subnetting, ACLs).</li>
-                    <li>Advanced knowledge of Microsoft Azure and basic knowledge of AWS.</li>
-                </ul>
+                <span class="role-title">Seneca College – Computer Systems Technology</span>
+                <span class="date-range">May 2023 – Present</span>
             </div>
             <div class="education-card">
-                <span class="role-title">Sheridan College – Social Service Worker Diploma</span>
-                <span class="date-range">Brampton, ON | Sept 2019 – Apr 2021</span>
-                <ul>
-                    <li>Cumulative GPA: 3.6 – Faculty of Social Sciences</li>
-                    <li>Graduated with academic honors and strong leadership involvement.</li>
-                </ul>
+                <span class="role-title">Sheridan College – Social Service Worker</span>
+                <span class="date-range">Sept 2019 – Apr 2021</span>
             </div>
         </div>
     </section>
@@ -359,13 +298,9 @@
     </div>
 
     <script>
-        // Toggle Mobile Menu
         function toggleMenu() {
-            var nav = document.getElementById("navLinks");
-            nav.classList.toggle("active");
+            document.getElementById("navLinks").classList.toggle("active");
         }
-
-        // Modal functionality for project images
         function openModal(img) {
             document.getElementById("imgModal").style.display = "block";
             document.getElementById("modalImage").src = img.src;
@@ -373,13 +308,8 @@
         function closeModal() {
             document.getElementById("imgModal").style.display = "none";
         }
-        
-        // Safer event listener
         window.onclick = function(event) {
-            var modal = document.getElementById("imgModal");
-            if(event.target == modal) {
-                closeModal();
-            }
+            if(event.target == document.getElementById("imgModal")) closeModal();
         }
     </script>
 
