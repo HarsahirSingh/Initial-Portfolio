@@ -1,0 +1,109 @@
+# 🚀 Harsahir Singh - ITSM Manager & Cloud Engineer Portfolio
+
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Portfolio-009944?style=for-the-badge&logo=github)](https://harsahirsingh.github.io/Portfolio/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/harsahir-singh)
+
+## 👋 About Me
+
+I'm an ITSM Manager at Healthcare of Ontario Pension Plan (HOOPP), where I bridge crisis leadership and cloud infrastructure expertise. My unique background in fire prevention and social services gives me an edge in managing high-pressure IT incidents — I focus on the human side of outages: clear communication, calm leadership, and bringing teams together when systems fail.
+
+**Key Highlight:** During my co-op at HOOPP, I helped develop their major incident coordination function. They created a permanent manager role and invited me back without me ever applying.
+
+## 💼 Professional Experience
+
+- 🏢 **Manager, IT Service Management** @ HOOPP (Sept 2024 – Present)
+- ☁️ **Cloud Engineer / Incident Manager – Co-op** @ HOOPP (May 2024 – Sept 2024)
+- 🖥️ **IT Support Specialist** @ DEX Technology (Nov 2023 – Nov 2024)
+- 🔥 **Fire Prevention & Site Security Supervisor** @ Stellantis Canada (May 2020 – April 2023)
+
+## 🛠️ Technical Skills
+
+### ITSM & Governance
+- Major Incident Management
+- Post-Incident Reviews (PIR)
+- Problem Management & RCA
+- ServiceNow, PagerDuty
+- Change Management
+
+### Cloud & Infrastructure
+- AWS (EC2, VPC, IAM, S3, SSM)
+- Microsoft Azure (VNet, Bastion, AD)
+- Linux/Unix & Windows Server
+- Cisco Networking
+- VMware ESXi
+
+### Observability & Analytics
+- Splunk & AppDynamics
+- Power BI Dashboards
+- Azure DevOps
+- Performance Monitoring
+
+## 📚 Education
+
+- **Computer Systems Technology (Advanced Diploma)** - Seneca Polytechnic (2023 - Present)
+  - Specialization: Cloud Infrastructure Associate
+  
+- **Social Service Worker Diploma** - Sheridan College (2019 - 2021)
+  - Academic Honors | GPA: 3.6
+  - Foundation in crisis intervention and high-pressure communication
+
+## 📊 Key Achievements
+
+- 🎯 **Helped build HOOPP's incident management function** from the ground up during co-op
+- 👥 **Lead coordination for 1,000+ IT users** across enterprise infrastructure
+- 📉 **Reduced security breaches by 35%** at Stellantis through incident analysis
+- 🚀 **Invited back as permanent manager** after proving value during co-op placement
+
+## 🏗️ Featured Projects
+
+### AWS Secure Cloud Deployment
+- Multi-tier VPC architecture across multiple AZs
+- Zero-trust security with AWS Systems Manager (SSM)
+- IAM governance with least-privilege access
+- Application Load Balancers with Route 53
+
+### Azure Infrastructure Optimization
+- Hub-and-Spoke network topology with VNet Peering
+- Azure Bastion for secure RDP/SSH access
+- Azure AD (Entra ID) synchronization with Domain Controllers
+- Network segmentation and security policies
+
+## 📁 Portfolio Structure
+
+```
+Portfolio/
+├── index.html                    # Main portfolio page
+├── Harsahir_Singh_Resume.pdf    # Professional resume
+├── Harsahir Singh.jpg           # Professional headshot
+├── aws-project.PNG              # AWS architecture diagram
+└── ms-project.PNG               # Azure infrastructure diagram
+```
+
+## 🚀 View Live Portfolio
+
+Visit my portfolio: **[https://harsahirsingh.github.io/Portfolio/](https://harsahirsingh.github.io/Portfolio/)**
+
+## 📫 Connect With Me
+
+- 📧 Email: [singh.harsahir@gmail.com](mailto:singh.harsahir@gmail.com)
+- 💼 LinkedIn: [linkedin.com/in/harsahir-singh](https://www.linkedin.com/in/harsahir-singh)
+- 🐙 GitHub: [github.com/HarsahirSingh](https://github.com/HarsahirSingh)
+
+## 🎨 Technologies Used
+
+- **Frontend:** HTML5, CSS3, JavaScript
+- **Design:** Inter Font Family, Font Awesome Icons
+- **Deployment:** GitHub Pages
+- **Version Control:** Git
+
+## 📄 License
+
+This portfolio is open source and available under the [MIT License](LICENSE).
+
+---
+
+**💡 Fun Fact:** My journey from social services → fire prevention → cloud engineering proves that crisis management skills are universal. Whether it's a building emergency or a P1 incident, the fundamentals are the same: stay calm, communicate clearly, and coordinate the response.
+
+---
+
+⭐ **If you found my portfolio inspiring, consider giving this repo a star!**
