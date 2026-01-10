@@ -24,7 +24,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body { 
-            font-family: 'Inter', sans-serif; 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
             color: var(--dark); 
             line-height: 1.7; 
             background: var(--white);
@@ -50,10 +50,32 @@
             align-items: center; 
             padding: 1.2rem 2rem; 
         }
-        .logo { font-size: 1.3rem; font-weight: 700; color: var(--primary); letter-spacing: -0.5px; }
+        .logo { 
+            font-size: 1.3rem; 
+            font-weight: 700; 
+            color: var(--primary); 
+            letter-spacing: -0.5px; 
+        }
         .nav-links { display: flex; align-items: center; gap: 2.5rem; }
-        .nav-links a { font-weight: 500; font-size: 0.95rem; color: var(--gray); }
+        .nav-links a { 
+            font-weight: 500; 
+            font-size: 0.95rem; 
+            color: var(--gray);
+            position: relative;
+        }
         .nav-links a:hover { color: var(--primary); }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+        .nav-links a:hover::after { width: 100%; }
+        
         .btn-resume { 
             background: var(--primary); 
             color: #fff !important; 
@@ -62,11 +84,17 @@
             font-weight: 600;
             box-shadow: var(--shadow-sm);
         }
-        .btn-resume:hover { background: var(--accent); transform: translateY(-2px); }
+        .btn-resume:hover { 
+            background: var(--accent); 
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--dark); }
 
         /* Hero Section */
         .hero { 
             padding: 12rem 2rem 8rem; 
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
             max-width: 1200px; 
             margin: 0 auto;
         }
@@ -76,65 +104,292 @@
             gap: 5rem;
             align-items: center;
         }
-        .hero-text h1 { font-size: 3rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; color: var(--dark); }
-        .hero-text .subtitle { font-size: 1.3rem; color: var(--primary); font-weight: 600; margin-bottom: 1.5rem; }
-        .hero-text p { font-size: 1.1rem; color: var(--gray); margin-bottom: 2.5rem; max-width: 650px; }
-        
-        /* Hero Image Fix */
+        .hero-text h1 { 
+            font-size: 3rem; 
+            font-weight: 800; 
+            line-height: 1.2; 
+            margin-bottom: 1rem; 
+            color: var(--dark);
+            letter-spacing: -1px;
+        }
+        .hero-text .subtitle {
+            font-size: 1.3rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        .hero-text p { 
+            font-size: 1.1rem; 
+            color: var(--gray); 
+            margin-bottom: 2.5rem; 
+            max-width: 650px;
+            line-height: 1.8;
+        }
+
+        /* FIXED: HERO IMAGE SHOWS FULL PIC */
         .hero-img { 
             width: 100%; 
-            height: auto; 
+            height: auto; /* Changed from fixed height */
+            max-width: 320px;
             border-radius: 20px; 
+            object-fit: contain; /* Shows full picture */
             box-shadow: var(--shadow-lg);
             border: 8px solid var(--white);
             cursor: pointer;
             transition: transform 0.3s ease;
-            display: block;
         }
-        .hero-img:hover { transform: scale(1.03); }
+        .hero-img:hover { transform: scale(1.02); }
 
-        /* Stats Bar Fix */
-        .stats-bar { background: var(--primary); padding: 3rem 2rem; }
+        .social-icons { display: flex; gap: 1rem; margin-top: 2rem; }
+        .social-icons a { 
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: var(--light-bg);
+            color: var(--gray);
+            font-size: 1.3rem;
+            transition: all 0.3s;
+        }
+        .social-icons a:hover { 
+            background: var(--primary); 
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: var(--primary);
+            padding: 3rem 2rem;
+            margin-top: -2rem;
+        }
         .stats-container {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
             text-align: center;
         }
-        .stat-item h3 { font-size: 2.2rem; color: white; font-weight: 800; white-space: nowrap; margin-bottom: 0.5rem; }
-        .stat-item p { color: rgba(255,255,255,0.9); font-size: 0.95rem; font-weight: 500; }
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: white;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            white-space: nowrap; /* Keep Co-op -> Manager on one line */
+        }
+        .stat-item p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1rem;
+            font-weight: 500;
+        }
 
-        /* Timeline & Sections */
+        /* Experience Section */
         section { padding: 6rem 2rem; }
         .section-container { max-width: 1100px; margin: 0 auto; }
-        h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 3rem; }
-        
-        .timeline { position: relative; padding-left: 3rem; border-left: 3px solid var(--primary); }
-        .timeline-item { margin-bottom: 3rem; position: relative; }
-        .timeline-card { background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow-md); border: 1px solid var(--border); }
-        .role-title { font-size: 1.3rem; font-weight: 700; color: var(--dark); display: block; }
-        .company-name { color: var(--primary); font-weight: 600; }
+        h2 { 
+            font-size: 2.5rem; 
+            font-weight: 800; 
+            color: var(--dark); 
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 4rem;
+            max-width: 700px;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #009944 0%, #007f5f 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 16px;
+            margin-bottom: 4rem;
+            box-shadow: var(--shadow-lg);
+        }
+        .highlight-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        .highlight-box ul { list-style: none; }
+        .highlight-box ul li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        .highlight-box ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
 
-        /* Projects Section Fix */
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; }
-        .project-card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--border); }
+        .timeline { position: relative; padding-left: 3rem; }
+        .timeline::before { 
+            content: ''; 
+            position: absolute; 
+            left: 0; 
+            top: 0; 
+            bottom: 0; 
+            width: 3px; 
+            background: linear-gradient(to bottom, var(--primary), var(--accent)); 
+        }
+        .timeline-item { position: relative; margin-bottom: 4rem; }
+        .timeline-item::before { 
+            content: ''; 
+            position: absolute; 
+            left: -3.6rem; 
+            top: 8px; 
+            width: 18px; 
+            height: 18px; 
+            background: var(--primary); 
+            border: 4px solid white; 
+            border-radius: 50%; 
+            box-shadow: 0 0 0 4px var(--light-bg);
+        }
+        .timeline-card { 
+            background: var(--white); 
+            padding: 2.5rem; 
+            border-radius: 12px; 
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+        .timeline-card:hover {
+            transform: translateX(8px);
+            box-shadow: var(--shadow-lg);
+        }
+        .role-title { 
+            font-size: 1.4rem; 
+            font-weight: 700; 
+            color: var(--dark); 
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .company-name { 
+            font-size: 1.1rem; 
+            color: var(--primary); 
+            font-weight: 600; 
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+        .date-range { 
+            font-size: 0.95rem; 
+            color: var(--gray); 
+            display: block;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        .timeline-card ul { list-style: none; }
+        .timeline-card ul li { 
+            padding: 0.6rem 0;
+            padding-left: 2rem; 
+            position: relative;
+            color: #333;
+            line-height: 1.7;
+        }
+        .timeline-card ul li::before { 
+            content: "→"; 
+            position: absolute; 
+            left: 0; 
+            color: var(--primary); 
+            font-weight: bold;
+        }
+
+        /* Skills Grid */
+        .skills-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 2rem; 
+        }
+        .skill-card { 
+            background: var(--white); 
+            padding: 2rem; 
+            border-radius: 12px; 
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+        .skill-card h3 { 
+            font-size: 1.25rem; 
+            color: var(--primary); 
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .skill-card ul { list-style: none; }
+        .skill-card ul li { 
+            padding: 0.6rem 0;
+            padding-left: 1.8rem; 
+            position: relative;
+            color: #555;
+        }
+        .skill-card ul li::before { 
+            content: "•"; 
+            position: absolute; 
+            left: 0; 
+            color: var(--accent); 
+            font-size: 1.5rem;
+        }
+
+        /* Projects - FIXED IMAGE SHOWS FULL PIC */
+        .projects-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+            gap: 2.5rem; 
+        }
+        .project-card { 
+            background: var(--white); 
+            border-radius: 12px; 
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
         .project-img { 
             width: 100%; 
             height: 250px; 
-            object-fit: contain; /* Shows full diagram */
+            object-fit: contain; /* Shows full diagram/pic */
             background: #f0f0f0; 
             cursor: pointer;
+            transition: transform 0.3s;
             display: block;
-            border-bottom: 1px solid var(--border);
-            transition: background 0.3s;
         }
-        .project-img:hover { background: #e8e8e8; }
+        .project-card:hover .project-img { transform: scale(1.02); }
         .project-body { padding: 2rem; }
-        .project-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem; }
+        .project-title { 
+            font-size: 1.4rem; 
+            font-weight: 700; 
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        .project-body ul { list-style: none; }
+        .project-body ul li { 
+            padding: 0.6rem 0;
+            padding-left: 2rem; 
+            position: relative;
+            color: #555;
+            line-height: 1.7;
+        }
+        .project-body ul li::before { 
+            content: "▸"; 
+            position: absolute; 
+            left: 0; 
+            color: var(--accent); 
+            font-weight: bold;
+        }
 
-        /* Lightbox (Pop-up) */
+        /* LIGHTBOX (POP-UP VIEW) STYLES */
         .lightbox {
             display: none;
             position: fixed;
@@ -152,33 +407,108 @@
             max-width: 90%;
             max-height: 90%;
             border-radius: 8px;
-            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
             cursor: default;
         }
         .lightbox.active { display: flex; }
 
-        /* Social Icons */
-        .social-icons { display: flex; gap: 1rem; margin-top: 2rem; }
-        .social-icons a { width: 45px; height: 45px; background: var(--light-bg); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: var(--gray); transition: 0.3s; }
-        .social-icons a:hover { background: var(--primary); color: white; transform: translateY(-3px); }
+        /* Education */
+        .education-card { 
+            background: var(--white); 
+            padding: 2.5rem; 
+            border-radius: 12px; 
+            margin-bottom: 2rem; 
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+        }
+        .education-card h3 { 
+            color: var(--primary); 
+            margin-bottom: 0.5rem; 
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        .education-card ul { list-style: none; }
+        .education-card ul li { 
+            padding: 0.5rem 0;
+            padding-left: 2rem; 
+            position: relative;
+            color: #555;
+        }
+        .education-card ul li::before { 
+            content: "◆"; 
+            position: absolute; 
+            left: 0; 
+            color: var(--accent); 
+        }
+
+        /* CTA & Footer */
+        .cta { 
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white; 
+            text-align: center; 
+            padding: 5rem 2rem; 
+            border-radius: 16px; 
+            margin-top: 4rem;
+            box-shadow: var(--shadow-lg);
+        }
+        .cta h2 { color: white; margin-bottom: 1rem; }
+        .cta p { color: rgba(255,255,255,0.95); margin-bottom: 2rem; font-size: 1.2rem; }
+        .cta a { 
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            font-weight: 700; 
+            font-size: 1.1rem; 
+            padding: 1rem 2.5rem; 
+            border-radius: 8px; 
+            transition: all 0.3s;
+            box-shadow: var(--shadow-md);
+        }
+        .cta a:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+
+        footer { 
+            background: var(--dark); 
+            color: #aaa; 
+            text-align: center; 
+            padding: 3rem 0; 
+            font-size: 0.95rem; 
+        }
 
         @media(max-width: 768px) {
-            .hero-content { grid-template-columns: 1fr; text-align: center; }
+            .menu-toggle { display: block; }
+            .nav-links { 
+                display: none; 
+                flex-direction: column; 
+                position: absolute; 
+                top: 70px; 
+                left: 0; 
+                width: 100%; 
+                background: var(--white); 
+                padding: 1rem 0; 
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1); 
+            }
+            .nav-links.active { display: flex; }
+            .hero-content { grid-template-columns: 1fr; text-align: center; gap: 3rem; }
+            .hero { padding-top: 10rem; }
             .hero-text h1 { font-size: 2.2rem; }
-            .stats-container { grid-template-columns: 1fr; }
-            .hero-img { max-width: 280px; margin: 0 auto; }
-            .nav-links { display: none; }
+            .hero-img { margin: 0 auto; width: 100%; max-width: 250px; }
+            .stats-container { grid-template-columns: 1fr; gap: 2rem; }
         }
     </style>
 </head>
 <body>
-
     <nav>
         <div class="nav-container">
             <div class="logo">Harsahir Singh</div>
-            <div class="nav-links">
-                <a href="#experience">Experience</a>
-                <a href="#projects">Projects</a>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#about" onclick="toggleMenu()">About</a>
+                <a href="#experience" onclick="toggleMenu()">Experience</a>
+                <a href="#projects" onclick="toggleMenu()">Projects</a>
+                <a href="#skills" onclick="toggleMenu()">Skills</a>
+                <a href="#education" onclick="toggleMenu()">Education</a>
                 <a href="Harsahir_Singh_Resume.pdf" target="_blank" class="btn-resume">
                     <i class="fas fa-download"></i> Resume
                 </a>
@@ -186,16 +516,16 @@
         </div>
     </nav>
 
-    <header class="hero">
+    <header class="hero" id="about">
         <div class="hero-content">
             <div class="hero-text">
                 <div class="subtitle">ITSM Manager & Cloud Engineer</div>
                 <h1>Bridging Crisis Leadership and Cloud Infrastructure</h1>
-                <p>From fire prevention to incident management at HOOPP. I focus on clear communication and calm leadership when systems fail.</p>
+                <p>My fire prevention and crisis management background translates surprisingly well to IT incident management. At HOOPP, I helped develop their major incident coordination function during my co-op, and was invited back to grow it as a permanent manager. I focus on the human side of incidents — clear communication, calm leadership, and bringing teams together when systems fail.</p>
                 <div class="social-icons">
-                    <a href="mailto:singh.harsahir@gmail.com"><i class="fas fa-envelope"></i></a>
-                    <a href="https://linkedin.com/in/harsahir-singh" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/HarsahirSingh" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="mailto:singh.harsahir@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/harsahir-singh" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/HarsahirSingh" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 </div>
             </div>
             <div>
@@ -206,53 +536,156 @@
 
     <div class="stats-bar">
         <div class="stats-container">
-            <div class="stat-item"><h3>1,000+</h3><p>IT Users Supported</p></div>
-            <div class="stat-item"><h3>P1/P2</h3><p>Incidents Managed</p></div>
-            <div class="stat-item"><h3>100%</h3><p>Lifecycle Ownership</p></div>
-            <div class="stat-item"><h3>Co-op → Manager</h3><p>Career Progression</p></div>
+            <div class="stat-item">
+                <h3>1,000+</h3>
+                <p>IT Users Supported</p>
+            </div>
+            <div class="stat-item">
+                <h3>P1/P2</h3>
+                <p>Critical Incidents Managed</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Incident Lifecycle Ownership</p>
+            </div>
+            <div class="stat-item">
+                <h3>Co-op → Manager</h3>
+                <p>Career Progression</p>
+            </div>
         </div>
     </div>
 
     <section id="experience">
         <div class="section-container">
-            <h2>Experience</h2>
+            <h2>Professional Experience</h2>
+            <p class="section-subtitle">From building infrastructure to building incident management programs — my journey combines hands-on technical work with strategic ITSM leadership.</p>
+            
+            <div class="highlight-box">
+                <h3><i class="fas fa-trophy"></i> Key Achievement: Helped Build HOOPP's Incident Management Function</h3>
+                <ul>
+                    <li><strong>Identified organizational gap:</strong> During my cloud engineering co-op, I recognized HOOPP needed more structured major incident coordination</li>
+                    <li><strong>Applied transferable skills:</strong> Drew on my fire prevention and crisis management background to help develop incident command protocols</li>
+                    <li><strong>Collaborated on framework:</strong> Worked with teams to create runbooks and cross-functional coordination processes</li>
+                    <li><strong>Invited back as Manager:</strong> My ability to bridge technical work with crisis leadership led HOOPP to create a permanent ITSM Manager role</li>
+                    <li><strong>Own full lifecycle:</strong> Now manage all major incidents from initial response through PIR publication</li>
+                </ul>
+            </div>
+
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-card">
                         <span class="role-title">Manager, IT Service Management</span>
-                        <span class="company-name">HOOPP</span>
-                        <p>Managing major incidents, PIR publication, and problem task closure for enterprise infrastructure.</p>
+                        <span class="company-name">Healthcare of Ontario Pension Plan (HOOPP)</span>
+                        <span class="date-range">September 2024 – Present</span>
+                        <ul>
+                            <li><strong>Lead major incident coordination</strong> for enterprise infrastructure supporting 1,000+ IT users</li>
+                            <li><strong>Facilitate cross-functional response:</strong> Bring together 10+ teams during P1/P2 incidents</li>
+                            <li><strong>Manage end-to-end incident lifecycle:</strong> From initial detection through resolution and PIR publication</li>
+                            <li><strong>Continuous improvement:</strong> Use ServiceNow, PagerDuty, and Azure DevOps to refine incident response</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-card">
-                        <span class="role-title">Cloud Engineer / Incident Manager (Co-op)</span>
-                        <span class="company-name">HOOPP</span>
-                        <p>Developed major incident runbooks and response frameworks for cloud-native environments.</p>
+                        <span class="role-title">Cloud Engineer / Incident Manager – Co-op</span>
+                        <span class="company-name">Healthcare of Ontario Pension Plan (HOOPP)</span>
+                        <span class="date-range">May 2024 – September 2024</span>
+                        <ul>
+                            <li><strong>Developed incident coordination:</strong> Helped create documentation and response frameworks</li>
+                            <li><strong>Managed critical P1/P2 incidents</strong> using ServiceNow, AppDynamics, and Splunk</li>
+                            <li><strong>Applied crisis management skills:</strong> Drew on fire prevention background to coordinate cross-team responses</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" style="background: var(--light-bg);">
+    <section id="skills" style="background: var(--light-bg);">
+        <div class="section-container">
+            <h2>Technical Skills & Tools</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3><i class="fas fa-tasks"></i> ITSM & Governance</h3>
+                    <ul>
+                        <li>Major Incident Management</li>
+                        <li>Post-Incident Reviews (PIR)</li>
+                        <li>ServiceNow Platform</li>
+                        <li>PagerDuty</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fas fa-cloud"></i> Cloud & Infrastructure</h3>
+                    <ul>
+                        <li>AWS (EC2, VPC, IAM, S3, SSM)</li>
+                        <li>Microsoft Azure (VNet, Bastion, AD)</li>
+                        <li>Windows & Linux Administration</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fas fa-chart-line"></i> Observability</h3>
+                    <ul>
+                        <li>Splunk Log Analysis</li>
+                        <li>AppDynamics APM</li>
+                        <li>Power BI Dashboards</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
         <div class="section-container">
             <h2>Technical Projects</h2>
+            <p class="section-subtitle">Hands-on cloud infrastructure projects demonstrating security-first architecture.</p>
             <div class="projects-grid">
                 <div class="project-card">
-                    <img src="aws-project.PNG" alt="AWS Project" class="project-img" onclick="openLightbox(this.src)">
+                    <img src="aws-project.PNG" alt="AWS Secure Cloud" class="project-img" onclick="openLightbox(this.src)">
                     <div class="project-body">
                         <h3 class="project-title">AWS Secure Cloud Deployment</h3>
-                        <p>VPC architecture across multiple AZs using SSM for zero-trust remote access.</p>
+                        <ul>
+                            <li><strong>High Availability:</strong> Multi-tier VPC architecture across multiple AZs</li>
+                            <li><strong>Zero-Trust Security:</strong> Eliminated public SSH exposure using AWS Systems Manager (SSM)</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="ms-project.PNG" alt="Azure Project" class="project-img" onclick="openLightbox(this.src)">
+                    <img src="ms-project.PNG" alt="Azure Infrastructure" class="project-img" onclick="openLightbox(this.src)">
                     <div class="project-body">
                         <h3 class="project-title">Azure Infrastructure Optimization</h3>
-                        <p>Hub-and-Spoke topology with VNet Peering and Azure Bastion integration.</p>
+                        <ul>
+                            <li><strong>Network Architecture:</strong> Designed Hub-and-Spoke topology with VNet Peering</li>
+                            <li><strong>Secure Connectivity:</strong> Integrated Azure Bastion for browser-based access</li>
+                        </ul>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" style="background: var(--light-bg);">
+        <div class="section-container">
+            <h2>Education</h2>
+            <div class="education-card">
+                <h3>Seneca Polytechnic — Computer Systems Technology (Advanced Diploma)</h3>
+                <span class="date-range">May 2023 – Present</span>
+                <ul>
+                    <li>Specialization: Cloud Infrastructure Associate</li>
+                    <li>Built virtual data centers using VMware ESXi for resource scaling</li>
+                </ul>
+            </div>
+            <div class="education-card">
+                <h3>Sheridan College – Social Service Worker Diploma</h3>
+                <span class="date-range">September 2019 – April 2021</span>
+                <ul>
+                    <li>Academic Honors | Cumulative GPA: 3.6</li>
+                    <li>Developed crisis intervention and high-pressure communication skills</li>
+                </ul>
+            </div>
+            <div class="cta">
+                <h2>Let's Connect</h2>
+                <p>I'm open to collaborating, networking, or discussing ITSM and Cloud initiatives.</p>
+                <a href="mailto:singh.harsahir@gmail.com"><i class="fas fa-envelope"></i> Contact Me</a>
             </div>
         </div>
     </section>
@@ -261,11 +694,15 @@
         <img id="lightbox-img" src="" alt="Enlarged view">
     </div>
 
-    <footer style="background: var(--dark); color: white; text-align: center; padding: 3rem;">
-        <p>&copy; 2026 Harsahir Singh | ITSM & Cloud Leadership</p>
+    <footer>
+        &copy; 2026 Harsahir Singh. All rights reserved.
     </footer>
 
     <script>
+        function toggleMenu() { 
+            document.getElementById("navLinks").classList.toggle("active"); 
+        }
+
         function openLightbox(src) {
             const lightbox = document.getElementById('lightbox');
             const img = document.getElementById('lightbox-img');
@@ -280,6 +717,5 @@
             document.body.style.overflow = 'auto'; // Resume scrolling
         }
     </script>
-
 </body>
 </html>
